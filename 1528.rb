@@ -38,3 +38,16 @@ s.length == indices.length == n
 s contains only lower-case English letters.
 0 <= indices[i] < n
 All values of indices are unique (i.e. indices is a permutation of the integers from 0 to n - 1).
+
+# @param {String} s
+# @param {Integer[]} indices
+# @return {String}
+def restore_string(s, indices)
+   new_s = []
+indices.each do |ele|
+    new_s << s[ele]
+    
+end
+
+new_s.join 
+end
