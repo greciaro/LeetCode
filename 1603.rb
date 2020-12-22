@@ -27,3 +27,30 @@ Constraints:
 0 <= big, medium, small <= 1000
 carType is 1, 2, or 3
 At most 1000 calls will be made to addCar
+
+
+class ParkingSystem
+
+=begin
+    :type big: Integer
+    :type medium: Integer
+    :type small: Integer
+=end
+    def initialize(big, medium, small)
+       parking_lot = [big, medium, small] 
+    end
+
+
+=begin
+    :type car_type: Integer
+    :rtype: Boolean
+=end
+    def add_car(car_type)
+    if self[car_type - 1] != 0
+        self[car_type - 1] =- 1
+    return true
+else
+    return false
+end
+    
+    end
