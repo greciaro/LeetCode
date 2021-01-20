@@ -32,3 +32,20 @@ Constraints:
 2 <= s.length <= 1000
 s.length is even.
 s consists of uppercase and lowercase letters.
+
+# @param {String} s
+# @return {Boolean}
+def halves_are_alike(s)
+    vowels = "aeiouAEIOU"
+length =s.length / 2
+a = s.slice(0 , length)
+b = s.slice(length, length)
+counter = 0
+a.each_char do |ele|
+        counter += 1 if vowels.include?(ele)
+end
+b.each_char do |ele|
+        counter -= 1 if vowels.include?(ele)
+end
+counter == 0
+end
