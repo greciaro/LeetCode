@@ -21,3 +21,23 @@ Constraints:
 
 2 <= nums.length <= 500
 1 <= nums[i] <= 10^3
+
+# @param {Integer[]} nums
+# @return {Integer}
+def max_product(nums)
+    i = 0
+    j = 0
+    max = 0
+    maxx = 0
+    nums.each_with_index do |ele1, i|
+        nums.each_with_index do |ele2, j|
+            if j>i
+                max = (nums[i]-1)*(nums[j]-1)
+                if max > maxx
+                    maxx = max
+                end
+            end
+        end
+    end
+    maxx    
+end
