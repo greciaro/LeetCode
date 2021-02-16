@@ -1,4 +1,4 @@
-#Given the array nums, for each nums[i] find out how many numbers in the array are smaller than it. That is, for each nums[i] you have to count the number of valid j's such that j != i and nums[j] < nums[i].
+Given the array nums, for each nums[i] find out how many numbers in the array are smaller than it. That is, for each nums[i] you have to count the number of valid j's such that j != i and nums[j] < nums[i].
 
 Return the answer in an array.
 
@@ -28,3 +28,20 @@ Constraints:
 
 2 <= nums.length <= 500
 0 <= nums[i] <= 100
+
+# @param {Integer[]} nums
+# @return {Integer[]}
+def smaller_numbers_than_current(nums)
+   output = []
+output_ele = 0
+nums.each_with_index do |ele1, i|
+   nums.each_with_index do |ele2, j|
+       if (j != i) && (ele2 < ele1)
+           output_ele += 1
+       end
+   end
+   output << output_ele
+   output_ele = 0
+end
+output 
+end
