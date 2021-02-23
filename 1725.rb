@@ -26,3 +26,15 @@ Constraints:
 rectangles[i].length == 2
 1 <= li, wi <= 109
 li != wi
+
+# @param {Integer[][]} rectangles
+# @return {Integer}
+def count_good_rectangles(rectangles)
+    squares = []
+how_many = 0
+rectangles.each_with_index do |ele1, i|
+    squares << ele1.min
+end
+maxLen = squares.max
+how_many = squares.count(maxLen)
+end
