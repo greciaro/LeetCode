@@ -39,3 +39,22 @@ startTime.length == endTime.length
 1 <= startTime.length <= 100
 1 <= startTime[i] <= endTime[i] <= 1000
 1 <= queryTime <= 1000
+
+# @param {Integer[]} start_time
+# @param {Integer[]} end_time
+# @param {Integer} query_time
+# @return {Integer}
+def busy_student(start_time, end_time, query_time)
+ students = 0
+
+start_time.each_with_index do |ele, i|
+    if query_time != end_time[i]
+        if (end_time[i] >= query_time) && (query_time >= start_time[i])
+            students += 1
+        end
+    else
+        students += 1
+    end
+end
+students
+end
