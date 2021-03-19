@@ -23,3 +23,14 @@ Note:
 4 <= A.length <= 10000
 0 <= A[i] < 10000
 A.length is even
+
+# @param {Integer[]} a
+# @return {Integer}
+def repeated_n_times(a)
+times = a.length / 2
+a.each do |ele|
+  if a.count(ele) == times
+    return ele
+  end
+end
+end
