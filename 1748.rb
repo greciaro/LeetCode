@@ -25,3 +25,15 @@ Constraints:
 
 1 <= nums.length <= 100
 1 <= nums[i] <= 100
+
+# @param {Integer[]} nums
+# @return {Integer}
+def sum_of_unique(nums)
+    sum = 0
+    nums.each do |ele|
+        if nums.count(ele) == 1
+            sum += ele
+        end
+    end
+    return sum
+end
