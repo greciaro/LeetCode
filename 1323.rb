@@ -30,3 +30,25 @@ Constraints:
 
 1 <= num <= 10^4
 num's digits are 6 or 9.
+
+# @param {Integer} num
+# @return {Integer}
+def maximum69_number (num)
+    answer = ""
+counter = 0
+num.to_s.each_char do |ele|
+  if counter == 0
+    if ele == "6"
+      ele = "9"
+      answer << ele
+      counter = 1
+    else
+    answer << ele
+    end
+  else
+   answer << ele
+  end
+
+end
+answer.to_i
+end
