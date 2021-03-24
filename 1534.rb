@@ -29,3 +29,25 @@ Constraints:
 3 <= arr.length <= 100
 0 <= arr[i] <= 1000
 0 <= a, b, c <= 1000
+
+
+# @param {Integer[]} arr
+# @param {Integer} a
+# @param {Integer} b
+# @param {Integer} c
+# @return {Integer}
+def count_good_triplets(arr, a, b, c)
+  answer = 0
+arr.each_with_index do |i, idx|
+  arr.each_with_index do |j, jdx|
+    arr.each_with_index do |k, kdx|
+      if (jdx > idx) && (kdx > jdx)
+         if ((i - j).abs <= a) && ((j - k).abs <= b) && ((i - k).abs <= c)
+           answer += 1
+         end
+      end
+    end
+  end
+end
+answer  
+end
