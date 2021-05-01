@@ -32,3 +32,27 @@ email[i] consist of lowercase English letters, '+', '.' and '@'.
 Each emails[i] contains exactly one '@' character.
 All local and domain names are non-empty.
 Local names do not start with a '+' character.
+
+
+    # @param {String[]} emails
+# @return {Integer}
+def num_unique_emails(emails)
+    new_emails = []
+
+emails. each do |i|
+
+local = i.split("@")
+local0_new = []
+  local[0].each_char { |char|
+    break if char == "+" 
+    next if char == "."
+    local0_new << char
+  }
+new_email = []
+new_email << local0_new << "@" << local[1]
+new_emails <<  new_email.join() unless (new_emails.include?(new_email.join()))
+  
+end
+
+new_emails.length
+end
