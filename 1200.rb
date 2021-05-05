@@ -26,3 +26,37 @@ Constraints:
 
 2 <= arr.length <= 10^5
 -10^6 <= arr[i] <= 10^6
+
+# @param {Integer[]} arr
+# @return {Integer[][]}
+def minimum_abs_difference(arr)
+    mins = []
+pairs = []
+arr.each_with_index do |ele1, idx1|
+arr.each_with_index do |ele2, idx2|
+
+if idx2 > idx1
+
+  if ele1 > ele2
+     mins << ele1 - ele2 
+     pairs << [ele2, ele1]
+  else
+     mins << ele2 - ele1
+    pairs << [ele1, ele2]
+  end
+  
+end
+  
+end
+end
+
+output = []
+pairs.each_with_index do |pair, i|
+
+output << pair if mins[i] == mins.min
+  
+end
+
+
+output.sort 
+end
