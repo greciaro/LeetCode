@@ -1,4 +1,4 @@
-You are keeping score for a baseball game with strange rules. The game consists of several rounds, where the scores of past rounds may affect future rounds' scores.
+You are keeping score for a baseball game with strange rules. The game consists of several rounds, where the scores of past rounds may affect future rounds scores.
 
 At the beginning of the game, you start with an empty record. You are given a list of strings ops, where ops[i] is the ith operation you must apply to the record and is one of the following:
 
@@ -47,3 +47,25 @@ Constraints:
 ops[i] is "C", "D", "+", or a string representing an integer in the range [-3 * 104, 3 * 104].
 For operation "+", there will always be at least two previous scores on the record.
 For operations "C" and "D", there will always be at least one previous score on the record.
+
+record = []
+int = (-312...312).map{ |i| i.to_s}
+
+ops.each do |ele|
+
+if int.include?(ele)
+   record << ele.to_i
+elsif ele == "+"
+   record << record[-1] + record[-2]
+elsif ele == "D"
+   record << record[-1] * 2   
+else
+   record.pop
+end
+
+  # print record
+  
+end
+
+print record.sum
+ 
