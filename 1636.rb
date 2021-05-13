@@ -24,3 +24,19 @@ Constraints:
 
 1 <= nums.length <= 100
 -100 <= nums[i] <= 100
+
+nums = [2,3,1,3,2]
+h = Hash.new(0)
+nums.each do |ele|
+
+h[ele] += 1
+  
+end
+
+sorted = h.sort_by {|k, v| v}
+output = []
+sorted.each do |ele|
+  ele[1].times {output << ele[0]}
+end
+
+output
