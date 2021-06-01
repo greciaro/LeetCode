@@ -36,3 +36,31 @@ Constraints:
 
 1 <= arr.length <= 100
 1 <= arr[i] <= 1000
+
+
+# @param {Integer[]} arr
+# @return {Integer}
+def sum_odd_length_subarrays(arr)
+    total = 0
+size = arr.length
+
+arr.each_with_index do |i, idx|
+a = idx
+   while a <= size-1
+
+    total += arr[idx..a].sum
+     
+     a += 2
+  #    puts total
+  #   print "Press any key to continue\r"
+  # gets
+       
+     
+  #    puts "And ends after 2 lines"
+   
+   end
+  
+  
+end
+total
+end
