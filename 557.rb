@@ -19,3 +19,19 @@ s contains printable ASCII characters.
 s does not contain any leading or trailing spaces.
 There is at least one word in s.
 All the words in s are separated by a single space.
+
+
+# @param {String} s
+# @return {String}
+def reverse_words(s)
+    array = s.split(" ")
+new_array = []
+
+array.each do |word|
+
+   new_array << word.reverse!
+  
+end
+
+new_array.join(" ")
+end
