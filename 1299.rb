@@ -26,3 +26,16 @@ Constraints:
 
 1 <= arr.length <= 104
 1 <= arr[i] <= 105
+
+
+# @param {Integer[]} arr
+# @return {Integer[]}
+def replace_elements(arr)
+    arr.each_with_index do |i, idx|
+
+  arr[idx] = arr[idx+1..-1].max
+  
+end
+arr[-1] = -1
+    arr
+end
